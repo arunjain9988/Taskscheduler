@@ -123,33 +123,6 @@ TaskScheduler/fast:
 	$(MAKE) -f CMakeFiles/TaskScheduler.dir/build.make CMakeFiles/TaskScheduler.dir/build
 .PHONY : TaskScheduler/fast
 
-TaskScheduler.o: TaskScheduler.cpp.o
-
-.PHONY : TaskScheduler.o
-
-# target to build an object file
-TaskScheduler.cpp.o:
-	$(MAKE) -f CMakeFiles/TaskScheduler.dir/build.make CMakeFiles/TaskScheduler.dir/TaskScheduler.cpp.o
-.PHONY : TaskScheduler.cpp.o
-
-TaskScheduler.i: TaskScheduler.cpp.i
-
-.PHONY : TaskScheduler.i
-
-# target to preprocess a source file
-TaskScheduler.cpp.i:
-	$(MAKE) -f CMakeFiles/TaskScheduler.dir/build.make CMakeFiles/TaskScheduler.dir/TaskScheduler.cpp.i
-.PHONY : TaskScheduler.cpp.i
-
-TaskScheduler.s: TaskScheduler.cpp.s
-
-.PHONY : TaskScheduler.s
-
-# target to generate assembly for a file
-TaskScheduler.cpp.s:
-	$(MAKE) -f CMakeFiles/TaskScheduler.dir/build.make CMakeFiles/TaskScheduler.dir/TaskScheduler.cpp.s
-.PHONY : TaskScheduler.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -186,9 +159,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... TaskScheduler"
 	@echo "... edit_cache"
-	@echo "... TaskScheduler.o"
-	@echo "... TaskScheduler.i"
-	@echo "... TaskScheduler.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

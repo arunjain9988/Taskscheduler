@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/arun/CLionProjects/TaskScheduler/TaskScheduler.h
+
+/home/arun/CLionProjects/TaskScheduler/main.cpp
+iostream
+-
+TaskScheduler.h
+/home/arun/CLionProjects/TaskScheduler/TaskScheduler.h
+
