@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/arun/CLionProjects/TaskScheduler/cmake-build-debug/TaskScheduler.cpp">
+			<Option target="TaskScheduler"/>
+		</Unit>
+		<Unit filename="/home/arun/CLionProjects/TaskScheduler/cmake-build-debug/TaskScheduler.h">
+			<Option target="TaskScheduler"/>
+		</Unit>
 		<Unit filename="/home/arun/CLionProjects/TaskScheduler/main.cpp">
 			<Option target="TaskScheduler"/>
 		</Unit>

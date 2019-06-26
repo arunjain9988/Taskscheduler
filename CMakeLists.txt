@@ -3,4 +3,4 @@ project(TaskScheduler)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(TaskScheduler main.cpp)
+add_executable(TaskScheduler main.cpp cmake-build-debug/TaskScheduler.cpp cmake-build-debug/TaskScheduler.h TaskScheduler.h)

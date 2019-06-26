@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/TaskScheduler.dir/main.cpp.o"
+  "CMakeFiles/TaskScheduler.dir/TaskScheduler.cpp.o"
   "TaskScheduler.pdb"
   "TaskScheduler"
 )
