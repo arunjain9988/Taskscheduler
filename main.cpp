@@ -1,8 +1,18 @@
 #include <iostream>
 #include<string>
+#include <limits>
 #include "TaskScheduler.h"
 using namespace std;
+
+
 class InvalidInput:public exception{};
+
+void clearInput()
+{
+    cin.clear();
+    cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+}
+
 int main()
 {
     int choice;
@@ -12,20 +22,22 @@ int main()
         try {
             cout<<"Welcome! Enter maximum no. of tasks: ";
             cin >> mx;
-            if (mx < 0 || mx > 500)
+            if (mx <= 0 || mx > 500)
                 throw InvalidInput();
             input = true;
         }
         catch (InvalidInput &str) {
-            cout << "Invalid Input. Please Try Again.\n";
+            cout << "\nInvalid Input. Input should be an integer between 1 and 500.\nPlease Try Again.\n\n";
+            clearInput();
         }
     }
     TaskScheduler obj(mx);
     string task_name;
-
-    int priority;
+    bool wrongInput;
+    int priority=0;
     do {
         cout<<"\n\n1.Add Task\n2.Complete Task\n3.Show All Tasks\n4.Exit\nEnter Your Choice:";
+        clearInput();
         cin>>choice;
         cout<<endl;
         switch (choice) {
@@ -33,8 +45,20 @@ int main()
                 cout << "Enter Task Name: ";
                 cin.ignore();
                 getline(cin,task_name);
-                cout << "Enter Task Priority: ";
-                cin >> priority;
+                wrongInput=false;
+                while(!wrongInput) {
+                    try {
+                        cout << "Enter Task Priority: ";
+                        cin >> priority;
+                        if (priority <= 0 || priority > 100)
+                            throw InvalidInput();
+                        wrongInput = true;
+                    }
+                    catch (InvalidInput &str) {
+                        cout << "\nInvalid Input. Priority should be an integer between 1 and 100.\nPlease Try Again.\n\n";
+                        clearInput();
+                    }
+                }
                 obj.addTask(task_name, priority);
                 break;
             case 2:

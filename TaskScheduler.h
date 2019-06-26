@@ -20,7 +20,7 @@ class TaskScheduler
 public:
     explicit TaskScheduler(int size=10)
     {
-        this->size=size;
+        this->size=size+1;
         H=new Task*[size+1];
         top=0;
     }
@@ -41,7 +41,7 @@ void TaskScheduler::addTask(string const &task, int priority) {
     temp->priority=priority;
     int r=pushHeap(temp);
     if(r==-1)
-        cout<<"Memory Full. Please delete some tasks."<<endl;
+        cout<<"\nMemory Full. Please delete some tasks."<<endl;
     else
         cout<<"Task add succeeded"<<endl;
 }
