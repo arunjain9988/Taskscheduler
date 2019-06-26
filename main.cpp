@@ -2,15 +2,27 @@
 #include<string>
 #include "TaskScheduler.h"
 using namespace std;
-
+class InvalidInput:public exception{};
 int main()
 {
     int choice;
-    int mx;
-    cout<<"Welcome! Enter maximum no. of tasks: ";
-    cin>>mx;
+    int mx=10;
+    bool input=false;
+    while(!input) {
+        try {
+            cout<<"Welcome! Enter maximum no. of tasks: ";
+            cin >> mx;
+            if (mx < 0 || mx > 500)
+                throw InvalidInput();
+            input = true;
+        }
+        catch (InvalidInput &str) {
+            cout << "Invalid Input. Please Try Again.\n";
+        }
+    }
     TaskScheduler obj(mx);
     string task_name;
+
     int priority;
     do {
         cout<<"\n\n1.Add Task\n2.Complete Task\n3.Show All Tasks\n4.Exit\nEnter Your Choice:";
@@ -39,5 +51,4 @@ int main()
         }
     }
     while(choice!=4);
-
 }
