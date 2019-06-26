@@ -1,4 +1,5 @@
 #include <iostream>
+#include<string>
 #include "TaskScheduler.h"
 using namespace std;
 
@@ -9,7 +10,7 @@ int main()
     cout<<"Welcome! Enter maximum no. of tasks: ";
     cin>>mx;
     TaskScheduler obj(mx);
-    string task;
+    string task_name;
     int priority;
     do {
         cout<<"\n\n1.Add Task\n2.Complete Task\n3.Show All Tasks\n4.Exit\nEnter Your Choice:";
@@ -18,10 +19,11 @@ int main()
         switch (choice) {
             case 1:
                 cout << "Enter Task Name: ";
-                cin >> task;
+                cin.ignore();
+                getline(cin,task_name);
                 cout << "Enter Task Priority: ";
                 cin >> priority;
-                obj.addTask(task, priority);
+                obj.addTask(task_name, priority);
                 break;
             case 2:
                 obj.completeTask();

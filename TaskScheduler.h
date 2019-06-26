@@ -18,7 +18,7 @@ class TaskScheduler
     int size;
     int top;
 public:
-    TaskScheduler(int size=10)
+    explicit TaskScheduler(int size=10)
     {
         this->size=size;
         H=new Task*[size+1];
